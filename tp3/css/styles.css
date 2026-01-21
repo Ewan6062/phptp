@@ -1,0 +1,16 @@
+body {
+    padding: 10px 40px;
+}
+table {
+    border-collapse: collapse;
+}   
+table th, table td {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    text-align: left;
+}
+table th {
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
