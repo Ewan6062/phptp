@@ -26,28 +26,28 @@ else{
         exit;
     }
 
-    $lesMajuscules = str_split("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 1);
-    $lesMinuscules = str_split("abcdefghijklmopqrstuvwxyz", 1);
+    $lesMajuscules = str_split("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    $lesMinuscules = str_split("abcdefghijklmopqrstuvwxyz");
     $okMajuscules = false;
     $okMinuscules = false;
 
-    while($i <= strlen($mdp)){
+    while ($okMajuscules == false || $okMinuscules == false){
         foreach($tabMDP as $carac){
             if (in_array($carac, $lesMajuscules)) {
                 $okMajuscules = true;
                 break;
             }
+        }
+        foreach($tabMDP as $carac){
             if (in_array($carac, $lesMinuscules)) {
                 $okMinuscules = true;
                 break;
             }
         }
-        $i++;
-    }
-
-    if ($okMajuscules == false and $okMinuscules == false){
-        echo "Le mot de passe doit contenir au moins une majuscule et une minuscule";
-        exit;
+        if ($okMajuscules == false || $okMinuscules == false){
+            echo "Le mot de passe doit contenir au moins une majuscule et une minuscule";
+            exit;
+        }
     }
     echo "Le mot de passe est correctement formé";
 }
